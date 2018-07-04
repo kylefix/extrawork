@@ -5,5 +5,5 @@ test('example 1', () => {
 })
 
 test('example 2', () => {
-  expect(nonDecreasing([4, 2, 1])).toEqual(true)
+  expect(nonDecreasing([4, 2, 1])).toEqual(false)
 })
