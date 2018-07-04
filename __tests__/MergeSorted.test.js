@@ -13,3 +13,11 @@ test('the given example', () => {
   const answer = [1, 2, 2, 3, 5, 6]
   expect(mergeSorted(nums1, nums2)).toEqual(answer)
 })
+
+test('random big arrays', () => {
+  const ITERATIONS = 3000
+  const nums1 = [...Array(ITERATIONS)].map(() => ~~(Math.random() * ITERATIONS)).sort((a, b) => a - b)
+  const nums1Copy = [...nums1]
+  const nums2 = [...Array(ITERATIONS)].map(() => ~~(Math.random() * ITERATIONS)).sort((a, b) => a - b)
+  expect(mergeSorted(nums1, nums2)).toEqual([...nums1Copy, ...nums2].sort((a, b) => a - b))
+})
