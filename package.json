@@ -1,0 +1,36 @@
+{
+  "name": "extrawork",
+  "version": "1.0.0",
+  "description": "",
+  "main": "StringMatch.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylefix/extrawork.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kylefix/extrawork/issues"
+  },
+  "homepage": "https://github.com/kylefix/extrawork#readme",
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.0.1",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.1.0",
+    "regenerator-runtime": "^0.11.1"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "npm": "^6.1.0"
+  }
+}
