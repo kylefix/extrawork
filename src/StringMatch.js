@@ -1,9 +1,7 @@
 const range = (a, b) => [...Array(b - a)].map((_, i) => i + a)
 
 // this is just bruteforce not optimal...
-// could probably just search for the seed inside the target and count how many time it is repeated
-// and then concatenate the rest of the string together and make sure it is equal to seed
-// then add the first number + 2 for the result unless it was a perfect match
+// rewrote it below
 export const repeatedMatch = (seed, target) =>
   range(1, Math.ceil((target.length + seed.length) / seed.length) + 1).reduce((result, timesToRepeat) => {
     if (~result) return result
@@ -11,3 +9,15 @@ export const repeatedMatch = (seed, target) =>
       ? timesToRepeat
       : -1
   }, -1)
+
+export const repeatedMatch2 = (seed, target) => {
+  const repeatCount = Math.ceil(target.length / seed.length)
+
+  return [1, 0].reduce((answer, n) =>
+    seed.repeat(repeatCount + n).includes(target)
+      ? repeatCount + n
+      : answer
+    ,
+  -1
+  )
+}

@@ -4,7 +4,7 @@ const _tail = Symbol('tail')
 const _stack = Symbol('stack')
 
 // realized there was no use to use a linked list
-// redid this in MinStack2 with a second stack
+// redid this in MinStack2 below with a second stack
 export class MinStack {
   constructor () {
     this[_head] = {} // the min
@@ -60,6 +60,34 @@ export class MinStack {
     this[_head].value === this[_stack].pop()
       ? this._popHead()
       : this._popTail()
+    return this
+  }
+
+  top () {
+    return top(this[_stack])
+  }
+}
+
+const _min = Symbol('min')
+
+export class MinStack2 {
+  constructor () {
+    this[_min] = [] // the min
+    this[_stack] = []
+  }
+
+  push (value) {
+    !(top(this[_min]) < value) && this[_min].push(value)
+    this[_stack].push(value)
+    return this
+  }
+
+  getMin () {
+    return top(this[_min])
+  }
+
+  pop () {
+    (top(this[_min]) === this[_stack].pop()) && this[_min].pop()
     return this
   }
 
