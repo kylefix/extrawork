@@ -7,12 +7,14 @@ export const mergeSorted = (target, origin) => {
     array: origin,
     index: 0
   }]
+
   return mergeSources(target, sources)
 }
 
 const mergeSources = (target, sources, start = 0) => {
+  // recursive base case
   if (sources.some(xs => xs.array.length === xs.index)) {
-    // recursive base case
+    // dump rest of the other array at end
     sources.some(xs =>
       (xs.index !== xs.array.length) &&
         target.push(...xs.array.slice(xs.index))

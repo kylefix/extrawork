@@ -21,9 +21,3 @@ const countEqualTo = (obj, target) =>
   Object.values(obj).reduce((count, sum) =>
     count + (sum === target)
     , 0)
-
-const sumDigits = x =>
-  x.toString().split('').reduce((acc, n) => acc + +n, 0)
-
-const reverse = str => [...str].reverse().join('')
-
